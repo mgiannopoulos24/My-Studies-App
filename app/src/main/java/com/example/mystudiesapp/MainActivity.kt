@@ -36,9 +36,9 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun LoginContent() {
-        var email by remember { mutableStateOf("") }
-        var password by remember { mutableStateOf("") }
-        var errorMessage by remember { mutableStateOf<String?>(null) }
+        val email by remember { mutableStateOf("") }
+        val password by remember { mutableStateOf("") }
+        val errorMessage by remember { mutableStateOf<String?>(null) }
 
         Column(
             modifier = Modifier
