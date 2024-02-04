@@ -12,17 +12,21 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.example.mystudiesapp.ui.theme.MyStudiesAppTheme
+
 
 class Login_Form : ComponentActivity() {
     private val auth: FirebaseAuth by lazy { Firebase.auth }
@@ -110,7 +114,7 @@ class Login_Form : ComponentActivity() {
                                         )
                                     context.startActivity(intent)
                                 },
-                                style = MaterialTheme.typography.body2
+
                             )
                         }
 
@@ -153,12 +157,12 @@ class Login_Form : ComponentActivity() {
                         "reg1@di.uoa.gr" -> navigateTo("/MainReg")
                         else -> {
                             // Handle other cases or show an error message
-                            errorMessage = "Invalid user email"
+                            var errorMessage = "Invalid user email"
                         }
                     }
                 } else {
                     // If sign in fails, display a message to the user.
-                    errorMessage = "Authentication failed. Please try again."
+                    var errorMessage = "Authentication failed. Please try again."
                 }
             }
     }
